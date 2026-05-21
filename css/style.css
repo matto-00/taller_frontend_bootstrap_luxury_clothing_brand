@@ -1016,6 +1016,170 @@ textarea.form-v {
 .fade-up-d4 { transition-delay: 0.4s; }
 
 /* ===========================
+   CUSTOM CURSOR
+   mix-blend-mode: exclusion → auto-adapts to any background
+   Aparece oscuro sobre fondos claros, claro sobre fondos oscuros
+   =========================== */
+html, html *, html *::before, html *::after {
+  cursor: none !important;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid #FFFFFF;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: exclusion;
+  transition: width 0.3s cubic-bezier(0.25,0.46,0.45,0.94),
+              height 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+  will-change: left, top, width, height;
+  opacity: 1;
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 6px;
+  height: 6px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: exclusion;
+  will-change: left, top;
+}
+
+.cursor-ring.is-hovering {
+  width: 54px;
+  height: 54px;
+}
+
+.cursor-ring.is-clicking {
+  width: 22px;
+  height: 22px;
+  transition: width 0.1s ease, height 0.1s ease;
+}
+
+/* ===========================
+   DARK MODE
+   Toggle via html.dark-mode
+   =========================== */
+html.dark-mode body        { background-color: #141310; color: #EDE8DE; }
+
+html.dark-mode .bg-cream-light  { background-color: #141310 !important; }
+html.dark-mode .bg-cream        { background-color: #1E1C17 !important; }
+html.dark-mode .bg-cream-dark   { background-color: #252219 !important; }
+
+html.dark-mode .navbar-vauclaire.scrolled {
+  background: #1E1C17 !important;
+  box-shadow: 0 1px 0 #2A2720;
+}
+html.dark-mode .brand-logo              { color: #EDE8DE !important; }
+html.dark-mode .navbar-vauclaire .nav-link { color: #EDE8DE !important; }
+html.dark-mode .nav-toggler span        { background: #EDE8DE; }
+
+html.dark-mode .hero-text-col   { background-color: #1E1C17; }
+html.dark-mode .hero-brand      { color: #EDE8DE; }
+html.dark-mode .hero-est        { color: #C9A96E; }
+html.dark-mode .hero-subtitle   { color: #8A8475; }
+
+html.dark-mode .section-title   { color: #EDE8DE; }
+html.dark-mode h2, html.dark-mode h3,
+html.dark-mode h4, html.dark-mode h5 { color: #EDE8DE; }
+html.dark-mode .body-text       { color: #8A8475; }
+html.dark-mode p                { color: #8A8475; }
+html.dark-mode .label-caps      { color: #C9A96E; }
+
+html.dark-mode .btn-v           { color: #EDE8DE; border-color: #3A3830; }
+html.dark-mode .btn-v:hover     { background: #EDE8DE; color: #141310; border-color: #EDE8DE; }
+html.dark-mode .btn-v-solid     { background: #EDE8DE; color: #141310; border-color: #EDE8DE; }
+html.dark-mode .btn-v-solid:hover { background: transparent; color: #EDE8DE; }
+html.dark-mode .btn-v-gold      { color: #C9A96E; border-color: #C9A96E; }
+
+html.dark-mode .product-name    { color: #EDE8DE; }
+html.dark-mode .product-price   { color: #EDE8DE; }
+html.dark-mode .product-material { color: #8A8475; }
+html.dark-mode .product-info    { border-bottom-color: #2A2720; }
+html.dark-mode .product-img-wrap { background-color: #1E1C17; }
+
+html.dark-mode .page-header     { background-color: #1E1C17; }
+html.dark-mode .page-header-title { color: #EDE8DE; }
+
+html.dark-mode .filter-btn      { color: #8A8475; border-color: #2A2720; }
+html.dark-mode .filter-btn:hover,
+html.dark-mode .filter-btn.active { background: #EDE8DE; border-color: #EDE8DE; color: #141310; }
+
+html.dark-mode .split-story-body { background: #1E1C17; }
+
+html.dark-mode .contact-section  { background-color: #1E1C17; }
+html.dark-mode .form-v           { color: #EDE8DE; border-bottom-color: #2A2720; }
+html.dark-mode .form-v::placeholder { color: #5A5850; }
+html.dark-mode .form-label-v     { color: #8A8475; }
+html.dark-mode select.form-v option { background: #1E1C17; }
+
+html.dark-mode .timeline-title   { color: #EDE8DE; }
+html.dark-mode .timeline-text    { color: #8A8475; }
+html.dark-mode .value-tile       { background: #1E1C17; border-color: #2A2720; }
+html.dark-mode .value-tile h3    { color: #EDE8DE; }
+
+html.dark-mode .theme-toggle     { border-color: #2A2720; color: #8A8475; }
+
+/* ===========================
+   THEME TOGGLE BUTTON
+   =========================== */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--warm-gray);
+  font-size: 0.78rem;
+  transition: all var(--ease-med);
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+.theme-toggle:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ===========================
+   SECTION DARK UTILITY (nosotros)
+   =========================== */
+.section-dark {
+  background-color: #111009 !important;
+}
+.section-dark .section-title,
+.section-dark h2, .section-dark h3 { color: #EDE8DE; }
+.section-dark .label-caps          { color: #C9A96E; }
+.section-dark .body-text, .section-dark p { color: rgba(237,232,222,0.52); }
+.section-dark .divider-gold,
+.section-dark .divider-gold-left   { background: #C9A96E; }
+.section-dark .heritage-line::before {
+  background: linear-gradient(to bottom, transparent,
+    rgba(201,169,110,0.22) 10%, rgba(201,169,110,0.22) 90%, transparent);
+}
+.section-dark .timeline-dot        { border-color: #111009; }
+.section-dark .timeline-title      { color: #EDE8DE; }
+.section-dark .timeline-text       { color: rgba(237,232,222,0.48); }
+.section-dark .value-tile          { background: rgba(255,255,255,0.03); border-color: rgba(201,169,110,0.18); }
+.section-dark .value-tile:hover    { border-color: #C9A96E; }
+.section-dark .value-tile h3       { color: #EDE8DE; }
+.section-dark .value-icon-wrap     { border-color: #C9A96E; color: #C9A96E; }
+.section-dark .btn-v               { color: #EDE8DE; border-color: rgba(237,232,222,0.35); }
+.section-dark .btn-v:hover         { background: #EDE8DE; color: #111009; }
+
+/* ===========================
    SCROLLBAR
    =========================== */
 ::-webkit-scrollbar { width: 3px; }
