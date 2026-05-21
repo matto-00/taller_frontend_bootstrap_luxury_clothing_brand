@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VAUCLAIRE — Colección SS 2025. Prendas de lujo: abrigos, blazers, knitwear y accesorios premium." />
+  <title>Colección — VAUCLAIRE</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-vauclaire fixed-top">
+    <div class="container">
+      <a class="brand-logo" href="index.html">VAUCLAIRE</a>
+      <button class="nav-toggler d-lg-none" type="button"
+        data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="catalogo.html">Colección</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Maison</a></li>
+          <li class="nav-item"><a class="nav-link" href="lookbook.html">Lookbook</a></li>
+          <li class="nav-item ms-lg-2"><a class="nav-link" href="index.html#contacto"><i class="bi bi-envelope me-1" style="font-size:0.75rem;"></i>Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <span class="page-header-ghost" aria-hidden="true">COLLECTION</span>
+    <div class="container position-relative" style="z-index:1;">
+      <span class="label-caps">SS 2025</span>
+      <div class="divider-gold"></div>
+      <h1 class="page-header-title">La Colección</h1>
+      <p class="body-text mt-3 mx-auto" style="max-width:480px;">
+        Prendas concebidas para perdurar. Confeccionadas en los mejores talleres
+        europeos con materiales que mejoran con el tiempo.
+      </p>
+    </div>
+  </header>
+
+  <!-- FILTER BAR -->
+  <section class="bg-cream-light py-0" style="border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="filter-bar" role="group" aria-label="Filtros de categoría">
+        <button class="filter-btn active" data-filter="all">Todo</button>
+        <button class="filter-btn" data-filter="outerwear">Outerwear</button>
+        <button class="filter-btn" data-filter="formal">Sastrería</button>
+        <button class="filter-btn" data-filter="tops">Tops &amp; Knitwear</button>
+        <button class="filter-btn" data-filter="bottoms">Pantalones</button>
+        <button class="filter-btn" data-filter="accessories">Accesorios</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT GRID -->
+  <section class="bg-cream-light py-5" style="padding: 4rem 0 6rem !important;">
+    <div class="container">
+
+      <!-- Sort bar -->
+      <div class="d-flex justify-content-between align-items-center mb-4 fade-up">
+        <p class="body-text mb-0" style="font-size:0.75rem;">
+          Mostrando <strong id="productCount">12</strong> prendas
+        </p>
+        <select class="form-v" style="width:auto;font-size:0.72rem;padding:0.4rem 0;cursor:pointer;">
+          <option>Ordenar: Destacados</option>
+          <option>Precio: Mayor a Menor</option>
+          <option>Precio: Menor a Mayor</option>
+          <option>Nuevos Primero</option>
+        </select>
+      </div>
+
+      <div class="row g-4" id="productGrid">
+
+        <!-- 1 -->
+        <div class="col-lg-3 col-md-4 col-6 catalog-item fade-up" data-category="outerwear">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-badge">New</span>
+              <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&h=667&q=85" alt="The Belgravia Overcoat" loading="lazy" />
+              <a href="#" class="product-actions">Añadir al Deseo</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name">The Belgravia Overcoat</p>
+              <p class="product-material">Camel Cashmere Blend</p>
+              <span class="product-price">€ 1,850</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="col-lg-3 col-md-4 col-6 catalog-item fade-up fade-up-d1" data-category="formal">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1617922001439-4a2e6562f328?auto=format&fit=crop&w=500&h=667&q=85" alt="The Savile Suit" loading="lazy" />
+              <a href="#" class="product-actions">Añadir al Deseo</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name">The Savile Suit</p>
+              <p class="product-material">Navy Chalk Stripe Wool</p>
+              <span class="product-price">€ 3,800</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="col-lg-3 col-md-4 col-6 catalog-item fade-up fade-up-d2" data-category="outerwear">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-badge">SS/25</span>
+              <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&h=667&q=85" alt="Regent Cape" loading="lazy" />
+              <a href="#" class="product-actions">Añadir al Deseo</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name">Regent Cape</p>
+              <p class="product-material">Dove Grey Cashmere</p>
+              <span class="product-price">€ 2,200</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="col-lg-3 col-md-4 col-6 catalog-item fade-up fade-up-d3" data-category="formal">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&h=667&q=85" alt="Mercer Blazer" loading="lazy" />
+              <a href="#" class="product-actions">Añadir al Deseo</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name">Mercer Blazer</p>
+              <p class="product-material">Chalk Stripe Wool</p>
+              <span class="product-price">€ 1,250</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="col-lg-3 col-md-4 col-6 catalog-item fade-up" data-category="tops">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=500&h=667&q=85" alt="The Kensington Jumper" loading="lazy" />
+              <a href="#" class="product-actions">Añadir al Deseo</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name">The Kensington Jumper</p>
+              <p class="product-material">Oatmeal Lambswool</p>
+              <span class="product-price">€ 650</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="col-lg-3 col-md-4 col-6 catalog-item fade-up fade-up-d1" data-category="tops">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-badge">New</span>
+              <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=500&h=667&q=85" alt="Mayfair Dress Shirt" loading="lazy" />
+              <a href="#" class="product-actions">Añadir al Deseo</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name">Mayfair Dress Shirt</p>
+              <p class="product-material">Sea Island Cotton</p>
+              <span class="product-price">€ 425</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="col-lg-3 col-md-4 col-6 catalog-item fade-up fade-up-d2" data-category="tops">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=500&h=667&q=85" alt="The Chelsea Polo" loading="lazy" />
+              <a href="#" class="product-actions">Añadir al Deseo</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name">The Chelsea Polo</p>
+              <p class="product-material">Navy Piqué Cotton</p>
+              <span class="product-price">€ 380</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="col-lg-3 col-md-4 col-6 catalog-item fade-up fade-up-d3" data-category="bottoms">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=500&h=667&q=85" alt="Windsor Trousers" loading="lazy" />
+              <a href="#" class="product-actions">Añadir al Deseo</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name">Windsor Trousers</p>
+              <p class="product-material">Cream Wool Flannel</p>
+              <span class="product-price">€ 485</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="col-lg-3 col-md-4 col-6 catalog-item fade-up" data-category="bottoms">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&h=667&q=85" alt="Eton Chinos" loading="lazy" />
+              <a href="#" class="product-actions">Añadir al Deseo</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name">Eton Chinos</p>
+              <p class="product-material">Stone Cotton Twill</p>
+              <span class="product-price">€ 395</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="col-lg-3 col-md-4 col-6 catalog-item fade-up fade-up-d1" data-category="outerwear">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-badge">SS/25</span>
+              <img src="https://images.unsplash.com/photo-1544022613-e87ca65cd4f6?auto=format&fit=crop&w=500&h=667&q=85" alt="The Grosvenor Coat" loading="lazy" />
+              <a href="#" class="product-actions">Añadir al Deseo</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name">The Grosvenor Coat</p>
+              <p class="product-material">Midnight Wool Tweed</p>
+              <span class="product-price">€ 1,650</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="col-lg-3 col-md-4 col-6 catalog-item fade-up fade-up-d2" data-category="accessories">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=500&h=667&q=85" alt="Pemberton Cashmere Scarf" loading="lazy" />
+              <a href="#" class="product-actions">Añadir al Deseo</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name">Pemberton Scarf</p>
+              <p class="product-material">Scottish Cashmere</p>
+              <span class="product-price">€ 295</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="col-lg-3 col-md-4 col-6 catalog-item fade-up fade-up-d3" data-category="accessories">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=500&h=667&q=85" alt="Aldgate Leather Belt" loading="lazy" />
+              <a href="#" class="product-actions">Añadir al Deseo</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name">Aldgate Leather Belt</p>
+              <p class="product-material">Dark Tan Vegetable Leather</p>
+              <span class="product-price">€ 285</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /row -->
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="quote-band">
+    <div class="container text-center fade-up">
+      <span class="label-caps">Servicio Exclusivo</span>
+      <div class="divider-gold"></div>
+      <h2 class="section-title-light mb-4">¿Busca algo a su medida?</h2>
+      <p class="body-text text-cream mx-auto mb-5" style="max-width:480px;color:rgba(245,240,232,0.7) !important;">
+        Nuestro equipo de maestros sastres puede confeccionar cualquier prenda
+        según sus especificaciones exactas. Consulta sin compromiso.
+      </p>
+      <a href="index.html#contacto" class="btn-v btn-v-cream">Solicitar Consulta</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-v">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <span class="footer-brand">VAUCLAIRE</span>
+          <p class="footer-tagline mb-4">Maison de Mode — Paris</p>
+          <p class="footer-address">
+            12, Rue du Faubourg Saint-Honoré<br>
+            75008 Paris, France<br><br>
+            contact@vauclaire.com
+          </p>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <span class="footer-heading">La Maison</span>
+          <a class="footer-link" href="index.html">Inicio</a>
+          <a class="footer-link" href="catalogo.html">Colección</a>
+          <a class="footer-link" href="nosotros.html">Nuestra Historia</a>
+          <a class="footer-link" href="lookbook.html">Lookbook SS/25</a>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <span class="footer-heading">Servicios</span>
+          <a class="footer-link" href="#">Medida Exclusiva</a>
+          <a class="footer-link" href="#">Envíos Internacionales</a>
+          <a class="footer-link" href="#">Devoluciones</a>
+          <a class="footer-link" href="#">Cuidado de Prendas</a>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <span class="footer-heading">Correspondencia Privada</span>
+          <p class="footer-address mb-3">Únase a nuestra lista exclusiva.</p>
+          <div class="d-flex" style="border-bottom:1px solid rgba(245,240,232,0.15);">
+            <input type="email" placeholder="Su correo electrónico"
+              style="background:transparent;border:none;color:var(--cream);font-family:var(--font-sans);font-size:0.78rem;font-weight:300;letter-spacing:0.05em;padding:0.6rem 0;outline:none;flex:1;" />
+            <button style="background:transparent;border:none;color:var(--gold);cursor:pointer;padding:0 0.5rem;">
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <p class="footer-copy mb-0">© 2025 VAUCLAIRE. Todos los derechos reservados.</p>
+        <div class="d-flex">
+          <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-pinterest"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
